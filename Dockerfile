@@ -5,6 +5,10 @@ FROM cm2network/steamcmd:root
 LABEL maintainer="Your Name <youremail@example.com>"
 LABEL description="Vein Dedicated Server Docker Image"
 
+# Install Vein dependencies
+RUN apt update -y && \
+    apt install -y libatomic1 libasound2-dev libpulse-dev
+
 # Environment variables for server installation and paths
 ENV STEAM_USER anonymous
 ENV STEAM_PASS ""
