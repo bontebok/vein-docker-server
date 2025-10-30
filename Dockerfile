@@ -45,10 +45,15 @@ ENV DISCORD_WEBHOOK_URL ""
 ENV DISCORD_ADMIN_WEBHOOK_URL ""
 
 # Engine.ini - [ConsoleVariables]
+# Full list can be found at https://ramjet.notion.site/Console-Variable-List-279f9ec29f178049a1c7dec3d070e5e9
 # Prefix with CVAR_ followed by the exact console variable name from Vein docs
 # Example: To set 'vein.PvP=True', use ENV CVAR_vein.PvP=True
 # ENV CVAR_vein.PvP=True
 # ENV CVAR_vein.TimeMultiplier=16
+# ENV CVAR_vein.Time.ContinueWithNoPlayers = 0.000000
+    #If this is on, time continues moving when no players are on the server.
+# ENV CVAR_vein.UtilityCabinet.ContinueWithNoPlayers = 0.000000
+    #If this is off, UCs will not feed when no players are on the server.
 
 # --- End Default Server Settings ---
 
@@ -76,4 +81,5 @@ ENTRYPOINT ["/entrypoint.sh"]
 
 # Default command passed to entrypoint.sh (can be overridden)
 # The entrypoint script will add essential args like -log, -Port, -QueryPort
+
 CMD []
